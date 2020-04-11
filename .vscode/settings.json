@@ -1,0 +1,19 @@
+{
+    "editor.wordWrap": "wordWrapColumn",
+    "files.exclude":{
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.venv": true, 
+    },
+    "editor.cursorStyle": "line",
+    "editor.cursorWidth": 2,
+    "workbench.colorCustomizations":{
+        "editorIndentGuide.activeBackground": "#ffe766",
+        // "editorIndentGuide.background": ,
+        "editorCursor.foreground": "#ffffff",
+    }
+        
+}
