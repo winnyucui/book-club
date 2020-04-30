@@ -158,18 +158,38 @@ README.md:
 
   ## Directory Structure
 
-  ## Packages
-  flask           microframework for developing backend python apps
-  python-dotenv   remembers flask environment variables
+  ## Prerequisites
+  Install pyenv and direnv using your os-specific package manager.
 
-
-  ## Set Up
+  For macOS:
   ```sh
   brew install pyenv
   brew install direnv
-  
-
   ```
+  Follow pyenv and direnv documentation. Direnv needs to be hooked into the shell.
+
+  ## Setting up the Project
+  Execute the following commands in the root of the project.
+  ```sh
+  pip-sync # install python packages
+  direnv allow # instantiate environment variables
+  ```
+
+  ## Development
+  - If you want to install a python package, add the package name to setup.py "install_requires" variable, then run pip-sync.
+
+  ## Meta
+  pipdeptree # view python package dependecy tree
+  
+  pip-compile
+  
+  ## Glossary
+  direnv allow
+  pipdeptree
+  pip-compile
+  pip-sync
+
+
 
 
   ## Tooling
@@ -185,7 +205,13 @@ README.md:
   <os-package-manager> install direnv
   <os-package-manager> install pyenv
   ```
-  
+
+  ### Python Package Management
+  pip install .  # initial method to install python packages
+  pip-compile  # creates requirements.txt file
+  pip-sync  # update app dependencies as packages are added, deleted, modified
+
+
   ### Details
   *direnv:* 
   - shell extension to automatically load and unload environment variables, based on the current working directory. Environment variables must be located in a .envrc file. It is enough to have just one file in the root; as the project becomes more complicated, you can split up the .envrc files into smaller local ones. Eventually, these local envars will make their way into separate docker containers. The development process goes as follows:
@@ -203,6 +229,9 @@ README.md:
 
     
   ## Useful Commands
+
+
+
 
   ### bash
   echo, tee, sudo

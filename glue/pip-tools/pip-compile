@@ -1,5 +1,6 @@
 # ./glue/pip-tools 
 #!/usr/bin/env bash
 
-pip-compile ../setup.py
+# testing automation scripting
+# pip-compile ../setup.py
 

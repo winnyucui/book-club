@@ -1,0 +1,24 @@
+{
+  "name": "book-club",
+  "version": "1.0.0",
+  "description": "b-c = book-club b-c_venv = directory for managing virtual environment for b-c",
+  "main": "index.js",
+  "devDependencies": {
+    "lerna": "^3.20.2",
+    "lodash": "^4.17.15"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winn-cui/book-club.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/winn-cui/book-club/issues"
+  },
+  "homepage": "https://github.com/winn-cui/book-club#readme",
+  "dependencies": {}
+}

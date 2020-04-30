@@ -1,19 +1,30 @@
 {
     "editor.wordWrap": "wordWrapColumn",
-    "files.exclude":{
+    // "editor.wordWrapColumn": 88,
+    // "editor.wrappingIndent": "deepIndent",
+    "rewrap.reformat": true,
+    "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
         "**/.hg": true,
         "**/CVS": true,
         "**/.DS_Store": true,
-        "**/.venv": true, 
+        "**/.venv": true,
+        "**/.direnv": false,
+        "**/.mypy_cache": true,
     },
     "editor.cursorStyle": "line",
     "editor.cursorWidth": 2,
-    "workbench.colorCustomizations":{
+    "workbench.colorCustomizations": {
         "editorIndentGuide.activeBackground": "#ffe766",
         // "editorIndentGuide.background": ,
         "editorCursor.foreground": "#ffffff",
-    }
-        
+    },
+    "python.pythonPath": "/Users/pyrinox/Documents/github/book-club/.venv/bin/python3",
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.enabled": true,
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
 }

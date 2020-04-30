@@ -20,6 +20,8 @@ python-dotenv   remembers flask environment variables
 
 ### FUTURE REFERENCE
 
+~_ == _
+
 Abbreviation Strategies:
                     bookclub    b~kcl~b
 Desyllabization:    bookclub    b'c

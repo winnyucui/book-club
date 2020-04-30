@@ -1,0 +1,34 @@
+# This file contains functions that .envrc uses
+
+use_python() {
+    local new_python_version=$1
+    if pyenv versions | grep -q $new_python_version; then
+        source .venv/bin/activate
+        local old_python_version=$(python --version | cut -d ' ' -f 2)
+        if [[ $old_python_version != $new_python_version ]]; then
+            export PYENV_VERSION=$new_python_version 
+            rm -r .venv
+            python3 -m venv .venv # create venv
+            source .venv/bin/activate  # activate venv
+        fi
+        echo "Now using python $new_python_version"
+    else
+        local sys_py_version=$(python --version 2>&1 | cut -d ' ' -f 2)
+        echo -e "\033[$i;31""mpyenv: missing python version \033[0m"
+        echo -e "\033[$i;31""mrun: pyenv install -v $new_python_version \033[0m"
+        echo -e "\033[$i;31""mDefaulting to sys python $sys_py_version \033[0m"
+    fi 
+}
+
+use_node() {
+    local new_node_version=$1
+    source ~/.nvm/nvm.sh  # default nvm installation directory
+    if nvm ls --no-colors --no-alias | grep -q $new_node_version; then
+        nvm use $new_node_version
+    else
+        local system_node_version=$(node --version)
+        echo -e "\033[$i;31""mnvm: missing node version \033[0m"
+        echo -e "\033[$i;31""mrun: nvm install $new_node_version \033[0m"
+        echo -e "\033[$i;31""mDefaulting to sys node $system_node_version \033[0m"
+    fi
+}

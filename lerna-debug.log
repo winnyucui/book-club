@@ -1,0 +1,11 @@
+0 silly argv {
+0 silly argv   _: [ 'bootstrap' ],
+0 silly argv   hoist: true,
+0 silly argv   lernaVersion: '3.20.2',
+0 silly argv   '$0': 'node_modules/.bin/lerna'
+0 silly argv }
+1 notice cli v3.20.2
+2 verbose rootPath /Users/pyrinox/Documents/github/book-club
+3 error JSONError: Unexpected token } in JSON at position 267 while parsing near '...d\" && exit 1",    },    "repository":...' in koa/package.json
+3 error     at module.exports (/Users/pyrinox/Documents/github/book-club/node_modules/parse-json/index.js:26:19)
+3 error     at parse (/Users/pyrinox/Documents/github/book-club/node_modules/load-json-file/index.js:15:9)

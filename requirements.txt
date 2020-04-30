@@ -4,15 +4,25 @@
 #
 #    pip-compile
 #
-click==7.1.1              # via flask, pip-tools
-flask==1.1.2              # via book-club (setup.py)
-itsdangerous==1.1.0       # via flask
-jinja2==2.11.1            # via flask
-markupsafe==1.1.1         # via jinja2
+appdirs==1.4.3            # via black
+attrs==19.3.0             # via black
+black==19.10b0            # via book-club (setup.py)
+click==7.1.1              # via black, pip-tools
+entrypoints==0.3          # via flake8
+flake8==3.7.9             # via book-club (setup.py)
+mccabe==0.6.1             # via flake8
+mypy-extensions==0.4.3    # via mypy
+mypy==0.770               # via book-club (setup.py)
+pathspec==0.8.0           # via black
 pip-tools==4.5.1          # via book-club (setup.py)
 pipdeptree==0.13.2        # via book-club (setup.py)
+pycodestyle==2.5.0        # via flake8
+pyflakes==2.1.1           # via flake8
+regex==2020.4.4           # via black
 six==1.14.0               # via pip-tools
-werkzeug==1.0.1           # via flask
+toml==0.10.0              # via black
+typed-ast==1.4.1          # via black, mypy
+typing-extensions==3.7.4.2  # via mypy
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
