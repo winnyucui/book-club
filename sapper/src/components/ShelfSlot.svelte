@@ -6,7 +6,8 @@
     export let title;
     export let author;
     export let image;
-    export let text_box;
+    export let nominator;
+    export let comments;
 </script>
 
 
@@ -20,9 +21,12 @@
         <div id="title">{title}</div>
         <div id="author">{author}</div>
     </div>
-    <img id="image" src={image} alt="Smiley face">
+    <div id="image">
+        <img src={image} alt="Smiley face">
+    </div>
     <div id="text-box">
-        {text_box}
+        <div id="nominator">{nominator}</div>
+        <div id="comments">{comments}</div>
     </div>
 
 </div>
@@ -31,14 +35,25 @@
 <style>
     #slot {
         display: grid;
-        width: 600px;
-        height: 400px;
+        grid-template-columns: [line1] 1fr [line2] 1.5fr [line3];
+        grid-template-rows: [row1-start] 20% [row1-end] 80% [third-line];
+        grid-template-areas:
+            "header header"
+            "image description";
+        padding: 30px;
+        margin: 15px;
+        width: 500px;
+        height: 315px;
+        flex-grow: 1px;
         background-color: lightblue;
     }
 
     #header {
         grid-area: header;
-        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     #title {
@@ -53,23 +68,27 @@
 
     #image {
         grid-area: image;
-        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        /* justify-self: center; */
     }
 
     #text-box {
         grid-area: description;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         font-family: 'Yrsa', serif;
-        justify-self: center;
-
+        /* justify-self: center; */
     }
 
-    #slot {
-        grid-template-columns: [line1] 1fr [line2] 1fr [line3];
-        grid-template-rows: [row1-start] 20% [row1-end] 80% [third-line];
-        grid-template-areas:
-            "header header"
-            "image description";
+    #comments {
+        max-width: 75%;
     }
+
 </style>
 
 <!-- <style type="text/stylus">

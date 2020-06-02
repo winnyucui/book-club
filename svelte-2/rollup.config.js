@@ -31,7 +31,8 @@ export default {
 			 **/
 			preprocess: [
 				stylus({ /* options */ }),
-			]
+			],
+			// customElement: true,
 		}),
 
 		// If you have external dependencies installed from

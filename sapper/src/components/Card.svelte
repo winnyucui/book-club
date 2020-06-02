@@ -3,10 +3,16 @@
 
 
 <script>
+    export let id;
+    export let type;
+    export let active;
     export let title;
     export let author;
     export let image;
-    export let text_box;
+    export let nominator;
+    export let comments;
+
+    console.log("HERE I AM", active)
 </script>
 
 
@@ -15,30 +21,73 @@
 <link href="https://fonts.googleapis.com/css2?family=Alike&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Yrsa:wght@300&display=swap" rel="stylesheet">
 
-<div id="slot">
+<div id="card" class="card {type} {active ? "active" : "inactive"}">
     <div id="header">
         <div id="title">{title}</div>
         <div id="author">{author}</div>
     </div>
-    <img id="image" src={image} alt="Smiley face">
-    <div id="text-box">
-        {text_box}
+    <div id="image">
+        <img src={image} alt="Smiley face">
     </div>
+    <div id="text-box">
+        <div id="nominator">{nominator}</div>
+        <div id="comments">{comments}</div>
+    </div>
+    WHYD RSTIERN ENR ENISTERS
 
 </div>
 
 <!-- CSS SECTION -->
 <style>
-    #slot {
+    
+
+    .card {
+        
         display: grid;
-        width: 600px;
-        height: 400px;
+        grid-template-columns: [line1] 1fr [line2] 1.5fr [line3];
+        grid-template-rows: [row1-start] 20% [row1-end] 80% [third-line];
+        grid-template-areas:
+            "header header"
+            "image description";
+        padding: 30px;
+        margin: 15px;
+        width: 500px;
+        height: 315px;
+        flex-grow: 1px;
         background-color: lightblue;
+    }
+
+    .card:not(:last-child) {
+        position: absolute;
+    }
+
+    /* .card:hover {
+        transform: rotateX(180deg);
+        transition: 1s;
+        transform-style: preserve-3d;
+        opacity: 0;
+    } */
+
+
+
+    .active {
+        opacity: 1;
+        z-index: 2;
+    }
+
+    /* if type== lottery, make opacity 0
+    if type== shelf, make opacity .5
+     */
+    .inactive {
+        opacity: 0;
     }
 
     #header {
         grid-area: header;
-        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     #title {
@@ -53,23 +102,27 @@
 
     #image {
         grid-area: image;
-        justify-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        /* justify-self: center; */
     }
 
     #text-box {
         grid-area: description;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         font-family: 'Yrsa', serif;
-        justify-self: center;
-
+        /* justify-self: center; */
     }
 
-    #slot {
-        grid-template-columns: [line1] 1fr [line2] 1fr [line3];
-        grid-template-rows: [row1-start] 20% [row1-end] 80% [third-line];
-        grid-template-areas:
-            "header header"
-            "image description";
+    #comments {
+        max-width: 75%;
     }
+
 </style>
 
 <!-- <style type="text/stylus">

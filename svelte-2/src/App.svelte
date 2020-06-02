@@ -1,19 +1,32 @@
+
 <script>
-	import Box from './ShelfSlot.svelte';
+	import ShelfSlot from './ShelfSlot.svelte';
 
 	export let name;
+
+
+
+	export let book = {
+		title: "Harry Potter and the Sorcerer's Stone",
+		author: "J.K. Rowling",
+		image: "https://via.placeholder.com/200x300",
+		text_box: "Cina says: blah blah blah blah",
+	}
+	export let nominated_books = [book, book, book, book]
 	
-	export default {
-
-
-		components: { Box, Counter }
-	};
+	// export default {
+	// 	components: { Box, Counter }
+	// };
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
 	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
-	<ShelfSlot></ShelfSlot>
+	
+	{#each nominated_books as book}
+		<ShelfSlot {...book}/>
+	{/each}
+	
 
 </main>
 

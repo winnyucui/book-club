@@ -1,18 +1,4 @@
 'use strict';
-
-const koa = require('koa')
-const app = new koa()
-
-app.use(function *(){
-  this.body = "Hello World !!!";
-});
-
-app.listen(1234)
-
-
-
-
-'use strict';
 const koa = require('koa')
 const koaRouter = require('koa-router')
 
@@ -23,7 +9,12 @@ router.get('koala', '/', (ctx) => {
   ctx.body = "Welcome! To the Koala Book of Everything!"
 })
 
-app.use(router.routes())
+router.get('nominated_books', '/nominated-books', (ctx) => {
+  ctx.body = "Lets list all the nominated books!"
+})
+
+app
+  .use(router.routes())
   .use(router.allowedMethods())
 
 app.listen(1234, () => console.log('running on port 1234'))
