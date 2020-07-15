@@ -95,7 +95,6 @@
         <Timer {...countdown}/>
     </div>
     <div id="lottery-container">
-        {console.log("HELLO", {books})}
         <Lottery 
             books={books} 
             activeBooks={active_books} 

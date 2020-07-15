@@ -11,7 +11,6 @@
     export let spins;
     
     async function extract_active_details(books) {
-        console.log("IN THIS FUN", books)
         let active_details = books.map((book) => {
             return book.active
         })
@@ -26,27 +25,13 @@
         return Array.from(active_array.values())
     }
 
-    console.log("???", active_details)
 
     async function shift_array_right() {
         let last_element = active_details.pop()
         active_details.unshift(last_element)
         active_details = active_details
-        console.log("I AM FIRING")
     }
 
-
-    function updateBooksActiveField(books, ) {
-        books.forEach((book) => {
-            book.active =
-            console.log("HELLO", book.active)
-        })
-    }
-
-
-    function test() {
-        console.log("WTF")
-    }
 
     // [] : extract customization variables, propagate to top component to allow for easy customization of lottery 
     // [] : add more fine-grained functionality, propogate implementation details downward (e.g. hiding card contents when backside is facing)
@@ -99,10 +84,8 @@
     
 </script>
 
-<div>{spins}</div>
 <div class="lottery-slot" id="lottery-slot-{id}" in:fade="{{ duration: 100}}" out:fade="{{ duration: 100}}">
     {#each books as book, i}
-        <!-- {console.log("HEHE", book)} -->
         <Card id={i} {...book} active={active_details[i]} type={type} />
     {/each}
 </div>

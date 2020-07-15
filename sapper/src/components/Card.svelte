@@ -33,8 +33,6 @@
         <div id="nominator">{nominator}</div>
         <div id="comments">{comments}</div>
     </div>
-    WHYD RSTIERN ENR ENISTERS
-
 </div>
 
 <!-- CSS SECTION -->

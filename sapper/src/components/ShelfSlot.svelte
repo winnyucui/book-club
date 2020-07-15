@@ -91,38 +91,5 @@
 
 </style>
 
-<!-- <style type="text/stylus">
-	#slot
-		display grid
-		width 600px
-		height 400px
-		background-color lightblue
-		grid-template-columns [line1] 1fr [line2] 1fr [line3]
-		grid-template-rows [row1-start] 20% [row1-end] 80% [third-line]
-		grid-template-areas "header header"
-				"image description"
 
-	#header
-		grid-area header
-		justify-self center
-
-	#title
-		font-family 'Neuton', serif
-		font-size 30px
-
-	#author
-		font-family 'Alike', serif
-		font-size 15px
-
-	#image
-		grid-area image
-		justify-self center
-
-	#text-box
-		grid-area description
-		font-family 'Yrsa', serif
-		justify-self center
-</style> -->
-
-<!-- JS SECTION -->
 

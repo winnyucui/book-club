@@ -20,6 +20,7 @@
     "goodreads-api-node": "0.0.10",
     "polka": "next",
     "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.27.1",
     "sirv": "^0.4.0",
     "svelte-ts-preprocess": "^1.1.3"
   },
